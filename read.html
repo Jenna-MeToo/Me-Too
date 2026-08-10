@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>READ — ME TOO</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --navy: #102a43;
+      --blue: #2f6fbd;
+      --bright: #4c8edb;
+      --soft: #eaf3fc;
+      --pale: #f6f9fc;
+      --text: #18202a;
+      --muted: #536273;
+      --line: #d8e2ec;
+      --white: #ffffff;
+    }
+
+    body {
+      background: var(--pale);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.5;
+    }
+
+    /* HEADER */
+
+    header {
+      background: var(--white);
+      border-bottom: 2px solid var(--navy);
+      padding: 20px 6vw 0;
+    }
+
+    .top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    .top a {
+      color: var(--navy);
+      text-decoration: none;
+    }
+
+    .tiny-blue {
+      color: var(--blue);
+      font-weight: bold;
+    }
+
+    .logo {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(65px, 13vw, 145px);
+      line-height: .75;
+      color: var(--navy);
+      letter-spacing: -7px;
+      margin: 45px 0 30px;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+      padding: 18px 0;
+      border-top: 1px solid var(--line);
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    nav a {
+      color: var(--navy);
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      color: var(--blue);
+    }
+
+    nav .active {
+      color: var(--blue);
+      text-decoration: underline;
+      text-underline-offset: 5px;
+    }
+
+
+    /* MAIN */
+
+    main {
+      padding: 60px 6vw 90px;
+    }
+
+    .page-intro {
+      max-width: 850px;
+      margin-bottom: 70px;
+    }
+
+    .page-intro .label {
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 18px;
+    }
+
+    .page-intro h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--navy);
+      font-size: clamp(65px, 10vw, 125px);
+      font-weight: normal;
+      line-height: .85;
+      letter-spacing: -5px;
+      margin-bottom: 25px;
+    }
+
+    .page-intro p {
+      font-size: 17px;
+      max-width: 600px;
+      color: var(--muted);
+    }
+
+
+    /* FILTERS */
+
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 22px;
+      border-top: 2px solid var(--navy);
+      border-bottom: 1px solid var(--line);
+      padding: 15px 0;
+      margin-bottom: 45px;
+    }
+
+    .filters button {
+      border: none;
+      background: none;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      cursor: pointer;
+      padding: 3px 0;
+    }
+
+    .filters button:hover,
+    .filters button.active {
+      color: var(--blue);
+      text-decoration: underline;
+      text-underline-offset: 5px;
+    }
+
+
+    /* ARTICLE GRID */
+
+    .section-title {
+      font-size: 12px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 20px;
+    }
+
+    .articles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .article-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      min-height: 390px;
+      padding: 25px;
+      display: flex;
+      flex-direction: column;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .article-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 5px 5px 0 var(--bright);
+    }
+
+    .article-image {
+      height: 155px;
+      background: var(--soft);
+      margin: -25px -25px 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #7195b8;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .category {
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 18px;
+    }
+
+    .article-card h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--navy);
+      font-size: 31px;
+      line-height: 1;
+      font-weight: normal;
+      margin-bottom: 18px;
+    }
+
+    .article-card p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 25px;
+    }
+
+    .read-more {
+      color: var(--blue);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-top: auto;
+    }
+
+    .read-more:hover {
+      text-decoration: underline;
+    }
+
+
+    /* EMPTY STATE */
+
+    .empty-state {
+      margin-top: 25px;
+      border: 1px dashed #b9c9d9;
+      background: var(--white);
+      padding: 55px 35px;
+      text-align: center;
+    }
+
+    .empty-state h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--navy);
+      font-size: 35px;
+      font-weight: normal;
+      margin-bottom: 12px;
+    }
+
+    .empty-state p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+      background: var(--white);
+      border-top: 2px solid var(--navy);
+      padding: 30px 6vw 45px;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    footer a {
+      color: var(--blue);
+    }
+
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+
+      .articles {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .logo {
+        letter-spacing: -4px;
+      }
+
+      .articles {
+        grid-template-columns: 1fr;
+      }
+
+      .filters {
+        gap: 12px 18px;
+      }
+
+      footer {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+
+<body>
+
+  <header>
+
+    <div class="top">
+      <a href="index.html">← ME TOO</a>
+      <span class="tiny-blue">made by teens, for teens</span>
+    </div>
+
+    <div class="logo">
+      ME TOO
+    </div>
+
+    <nav>
+      <a href="index.html">HOME</a>
+      <a href="read.html" class="active">READ</a>
+      <a href="#">ART</a>
+      <a href="#">VOICES</a>
+      <a href="#">ABOUT</a>
+    </nav>
+
+  </header>
+
+
+  <main>
+
+    <section class="page-intro">
+
+      <div class="label">
+        ME TOO
+      </div>
+
+      <h1>
+        read
+      </h1>
+
+      <p>
+        writing about mental health, being a teenager,
+        and whatever else ends up here.
+      </p>
+
+    </section>
+
+
+    <div class="filters">
+
+      <button class="active">all</button>
+      <button>mental health</button>
+      <button>anxiety</button>
+      <button>depression</button>
+      <button>therapy</button>
+      <button>eating disorders</button>
+      <button>school</button>
+      <button>friends & family</button>
+      <button>other</button>
+
+    </div>
+
+
+    <div class="section-title">
+      latest
+    </div>
+
+
+    <section class="articles">
+
+      <!-- ARTICLE CARDS WILL GO HERE -->
+
+    </section>
+
+
+    <section class="empty-state">
+
+      <h2>
+        nothing here yet.
+      </h2>
+
+      <p>
+        the first ME TOO pieces are still being written.
+      </p>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+
+    <span>
+      © 2026 ME TOO
+    </span>
+
+    <span>
+      this website is not a crisis service.
+      <a href="#">help & crisis information</a>
+    </span>
+
+  </footer>
+
+
+  <script>
+
+    const filters = document.querySelectorAll(".filters button");
+
+    filters.forEach(button => {
+      button.addEventListener("click", () => {
+
+        filters.forEach(item => item.classList.remove("active"));
+
+        button.classList.add("active");
+
+      });
+    });
+
+  </script>
+
+</body>
+</html>
