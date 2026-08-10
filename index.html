@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ME TOO — a magazine about being young</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #f4f0e8;
+      color: #171717;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.5;
+    }
+
+    header {
+      border-bottom: 1px solid #171717;
+      padding: 22px 5vw 18px;
+    }
+
+    .top-line {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .logo {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(70px, 14vw, 180px);
+      line-height: 0.8;
+      letter-spacing: -8px;
+      margin: 35px 0 25px;
+    }
+
+    .tagline {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(20px, 3vw, 34px);
+      max-width: 700px;
+      line-height: 1.15;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+      margin-top: 30px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    nav a {
+      color: #171717;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 55px 5vw;
+    }
+
+    .issue {
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .featured {
+      border-top: 1px solid #171717;
+      border-bottom: 1px solid #171717;
+      padding: 35px 0 45px;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 50px;
+      align-items: end;
+    }
+
+    .featured h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(48px, 7vw, 100px);
+      line-height: 0.95;
+      font-weight: normal;
+      letter-spacing: -3px;
+    }
+
+    .featured-text {
+      font-size: 17px;
+      max-width: 430px;
+    }
+
+    .featured-text p {
+      margin-bottom: 25px;
+    }
+
+    .read-link {
+      display: inline-block;
+      border-bottom: 1px solid #171717;
+      color: #171717;
+      text-decoration: none;
+      padding-bottom: 4px;
+      text-transform: uppercase;
+      font-size: 12px;
+      letter-spacing: 1.5px;
+    }
+
+    .articles-title {
+      margin: 70px 0 25px;
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .articles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid #171717;
+    }
+
+    article {
+      padding: 25px 25px 40px 0;
+      margin-right: 25px;
+      border-right: 1px solid #171717;
+    }
+
+    article:last-child {
+      border-right: none;
+    }
+
+    article .category {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 25px;
+    }
+
+    article h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(28px, 3vw, 45px);
+      line-height: 1;
+      font-weight: normal;
+      margin-bottom: 20px;
+    }
+
+    article p {
+      font-size: 15px;
+      max-width: 350px;
+    }
+
+    footer {
+      border-top: 1px solid #171717;
+      margin-top: 80px;
+      padding: 30px 5vw 50px;
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    footer a {
+      color: #171717;
+    }
+
+    @media (max-width: 750px) {
+      .logo {
+        letter-spacing: -4px;
+      }
+
+      nav {
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+
+      .featured {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+
+      .articles {
+        grid-template-columns: 1fr;
+      }
+
+      article {
+        border-right: none;
+        border-bottom: 1px solid #171717;
+        margin-right: 0;
+      }
+
+      footer {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+
+    <div class="top-line">
+      <span>Issue 01</span>
+      <span>2026</span>
+    </div>
+
+    <div class="logo">ME TOO</div>
+
+    <div class="tagline">
+      a magazine about being young and trying to figure it out.
+    </div>
+
+    <nav>
+      <a href="#">Read</a>
+      <a href="#">Art</a>
+      <a href="#">Voices</a>
+      <a href="#">About</a>
+    </nav>
+
+  </header>
+
+
+  <main>
+
+    <div class="issue">
+      Issue 01 — Growing Up
+    </div>
+
+    <section class="featured">
+
+      <div>
+        <h1>
+          what happens when kids don't have to imagine anymore
+        </h1>
+      </div>
+
+      <div class="featured-text">
+        <p>
+          we used to have whole afternoons with nothing to do.
+          now there is always something to watch, something to scroll,
+          something telling us what we're supposed to be.
+        </p>
+
+        <a class="read-link" href="#">
+          Read the story →
+        </a>
+      </div>
+
+    </section>
+
+
+    <div class="articles-title">
+      More from Me Too
+    </div>
+
+    <section class="articles">
+
+      <article>
+        <div class="category">Body & Identity</div>
+
+        <h2>
+          the body i keep trying to send back
+        </h2>
+
+        <p>
+          a piece about living inside a body that sometimes feels
+          more like an argument than a home.
+        </p>
+      </article>
+
+
+      <article>
+        <div class="category">Growing Up</div>
+
+        <h2>
+          i had dolls. what happens now?
+        </h2>
+
+        <p>
+          childhood used to leave more room for imagination.
+          i'm not sure where that room went.
+        </p>
+      </article>
+
+
+      <article>
+        <div class="category">Mental Health</div>
+
+        <h2>
+          the things we don't know how to say
+        </h2>
+
+        <p>
+          thoughts, feelings and conversations that are
+          surprisingly hard to put into words.
+        </p>
+      </article>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+
+    <span>© 2026 Me Too</span>
+
+    <span>
+      this is a magazine, not a crisis service.
+      <a href="#">help & crisis information</a>
+    </span>
+
+  </footer>
+
+</body>
+</html>
