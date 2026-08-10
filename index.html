@@ -20,6 +20,7 @@
       --soft: #eaf3fc;
       --pale: #f6f9fc;
       --text: #18202a;
+      --muted: #536273;
       --white: #ffffff;
     }
 
@@ -75,10 +76,18 @@
       max-width: 650px;
     }
 
+    .tagline-small {
+      display: block;
+      margin-top: 12px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      color: var(--blue);
+    }
+
     .little-note {
       max-width: 220px;
       font-size: 13px;
-      color: #536273;
+      color: var(--muted);
     }
 
     nav {
@@ -111,7 +120,7 @@
       border: 1px solid #c8dced;
       padding: 45px;
       display: grid;
-      grid-template-columns: 1.4fr 1fr;
+      grid-template-columns: 1.2fr 1fr;
       gap: 50px;
       margin-bottom: 70px;
     }
@@ -131,7 +140,7 @@
     }
 
 
-    /* SECTION HEADERS */
+    /* SECTIONS */
 
     .section-heading {
       display: flex;
@@ -157,7 +166,7 @@
     }
 
 
-    /* ARTICLE CARDS */
+    /* ARTICLE PLACEHOLDERS */
 
     .articles {
       display: grid;
@@ -170,7 +179,7 @@
       background: white;
       border: 1px solid #d8e2ec;
       padding: 28px;
-      min-height: 300px;
+      min-height: 260px;
       display: flex;
       flex-direction: column;
       transition: transform .2s ease, box-shadow .2s ease;
@@ -201,12 +210,12 @@
 
     .card p {
       font-size: 14px;
-      color: #536273;
+      color: var(--muted);
       margin-top: auto;
     }
 
 
-    /* ABOUT STRIP */
+    /* CRISIS / HELP SECTION */
 
     .about-strip {
       background: var(--navy);
@@ -231,6 +240,22 @@
       align-self: center;
     }
 
+    .emergency {
+      margin-top: 22px;
+      display: inline-block;
+      color: white;
+      border-bottom: 1px solid white;
+      padding-bottom: 3px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .emergency:hover {
+      color: #b9d9f7;
+      border-color: #b9d9f7;
+    }
+
 
     /* FOOTER */
 
@@ -242,7 +267,7 @@
       justify-content: space-between;
       gap: 30px;
       font-size: 12px;
-      color: #536273;
+      color: var(--muted);
     }
 
     footer a {
@@ -305,7 +330,11 @@
     <div class="intro">
 
       <div class="tagline">
-        a place for the stuff in your head.
+        a teen perspective on mental health.
+
+        <span class="tagline-small">
+          maybe it's not just you.
+        </span>
       </div>
 
       <div class="little-note">
@@ -329,14 +358,14 @@
     <section class="welcome">
 
       <h1>
-        you don't have to explain everything.
+        what is this?
       </h1>
 
       <p>
-        ME TOO is a space for teenagers talking about mental health
-        in ways that actually sound like us.
-        <br><br>
-        no pretending. no perfect answers. just real things.
+        this is ME TOO.<br>
+        it's about mental health, mostly.<br>
+        i'll probably talk about other things too.<br>
+        made by a teenager, for teenagers.
       </p>
 
     </section>
@@ -353,16 +382,15 @@
       <article class="card">
 
         <div class="category">
-          mental health
+          coming soon
         </div>
 
         <h3>
-          your first article goes here
+          your writing goes here.
         </h3>
 
         <p>
-          This is a placeholder. Nothing from your Substack will be
-          added here unless you decide you want it.
+          This space is waiting for the first ME TOO piece.
         </p>
 
       </article>
@@ -371,15 +399,15 @@
       <article class="card">
 
         <div class="category">
-          mental health
+          coming soon
         </div>
 
         <h3>
-          another story goes here
+          something new.
         </h3>
 
         <p>
-          A completely new ME TOO piece will eventually live here.
+          Original ME TOO writing will go here.
         </p>
 
       </article>
@@ -388,15 +416,15 @@
       <article class="card">
 
         <div class="category">
-          mental health
+          coming soon
         </div>
 
         <h3>
-          something we're still figuring out
+          another story.
         </h3>
 
         <p>
-          This space can become whatever the site needs it to be.
+          Nothing from Substack will be added unless you choose it.
         </p>
 
       </article>
@@ -406,15 +434,33 @@
 
     <section class="about-strip">
 
-      <h2>
-        you are not the only person thinking about it.
-      </h2>
+      <div>
+        <h2>
+          you are not the only person thinking about it.
+        </h2>
+      </div>
 
-      <p>
-        ME TOO is a teen-made space for conversations about mental health,
-        the messy parts of growing up, and everything that sits somewhere
-        between the two.
-      </p>
+      <div>
+
+        <p>
+          ME TOO is a place to read, write, and talk about mental health.
+          <br><br>
+
+          <strong>
+            this is not a crisis line or emergency service.
+          </strong>
+
+          <br><br>
+
+          if you or someone else is in immediate danger,
+          call 911 or go to the nearest emergency department.
+        </p>
+
+        <a class="emergency" href="#">
+          → emergency & crisis help
+        </a>
+
+      </div>
 
     </section>
 
